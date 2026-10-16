@@ -7,7 +7,7 @@
 
 ## How to continue with any AI assistant
 
-Paste this as your first message, and attach `SPEC.md` and `notes/STATUS.md`:
+Paste this as your first message, and attach `../SPEC.md` and `notes/STATUS.md`:
 
 ```
 You are my helper and friend for a fun side project. Read the attached SPEC.md and
@@ -37,7 +37,7 @@ Planning and setup. No code written yet.
 ## Next steps
 
 1. Create the public GitHub repo `drl-home-energy` (README, Python .gitignore, MIT license)
-2. Clone it in PyCharm, add `SPEC.md` and `notes/STATUS.md`, make the first commit and push
+2. Clone it in PyCharm, add `../SPEC.md` and `notes/STATUS.md`, make the first commit and push
 3. Set up a virtual environment and `requirements.txt` (gymnasium, stable-baselines3, pandas, matplotlib)
 4. Confirm the open questions in SPEC.md (data sources, battery/PV parameters)
 5. Build the Stage 1 Gymnasium environment, then a rule-based baseline
