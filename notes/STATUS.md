@@ -12,22 +12,16 @@ Build a beginner-friendly deep reinforcement learning (DRL) experiment in which 
 
 This is a learning project, not a real-world control system.
 
-The project will be developed in stages. Each stage should have a simple rule-based baseline so that its results can be compared with those of a trained agent.
+The project is developed in two separate tracks that share one simulation core:
 
-## Owner Background and Workflow
+- **Track A (first):** rule-based baseline and scenario analysis, for example whether a larger battery pays off.
+- **Track B (afterwards):** a DRL agent trained on the fixed system selected in Track A and compared with the baseline.
 
-* The owner is interested in AI, chatbots, and deep reinforcement learning.
-* Programming experience is limited; explanations should be simple and practical.
-* Work should proceed in small, manageable steps.
-* Code examples should be ready to copy and paste, with explanations of what they do.
-* Git operations should be explained simply, preferably using PyCharm's interface.
-* Conversation language: German.
-* Repository content, code, comments, documentation, and commit messages: English.
-* Planning and project setup do not require immediate implementation of Python code.
+See Sections 3, 6, and 7 of [`../SPEC.md`](../SPEC.md).
 
 ## Current Phase
 
-**Project setup and planning.**
+**Project setup and planning, about to start Track A (baseline and scenario analysis).**
 
 The repository has been created, cloned locally, and opened in PyCharm. The Python environment and initial dependencies have been configured.
 
@@ -49,6 +43,8 @@ No project-specific Python code has been written yet.
 * [x] Installed the listed Python dependencies.
 * [x] Verified that Gymnasium, Stable-Baselines3, pandas, and Matplotlib can be imported.
 * [x] Committed and pushed the documentation organization change.
+* [x] Decided on the two-track approach (baseline and scenarios first, DRL agent afterwards).
+* [x] Extended `SPEC.md` with Track A, Track B, roadmap, decision log, and open questions.
 
 ## Current Repository Structure
 
@@ -66,26 +62,31 @@ drl-home-energy/
 
 The source directories are currently empty. The Python environment `.venv/` is local to the development machine and should not be committed to Git.
 
+Planned additions (see Section 13 of `SPEC.md`): `src/scenarios/` and `src/agent/`.
+
 ## Next Steps
 
-1. Review and update the project documentation to reflect the current state.
-2. Review the specification's open questions and distinguish confirmed decisions from proposed defaults.
-3. Confirm the initial model-house parameters and suitable public data sources.
-4. Decide on the next implementation step before writing project-specific code.
-5. When implementation begins, build the Stage 1 simulation and a rule-based baseline before training a DRL agent.
+1. Replace `SPEC.md` and `notes/STATUS.md` with the updated versions, then commit and push.
+2. Resolve the open questions needed for Track A: data sources for demand, PV, and prices, plus the model house parameters.
+3. Build step A1: the simulation core with data loading for a full year.
+4. Build step A2: the rule-based baseline that outputs energy flows.
+5. Continue with cost evaluation (A3), scenario runner (A4), and visualizations (A5).
+
+Track B (DRL agent) starts only after Track A is implemented and validated.
 
 These steps are a plan, not a requirement to start coding immediately.
 
 ## Open Questions
 
-Refer to Section 10 of [`../SPEC.md`](../SPEC.md).
+Refer to Section 16 of [`../SPEC.md`](../SPEC.md).
 
 Important topics include:
 
-* Electricity price and household load data sources.
+* Electricity price, PV, and household load data sources.
+* Location and year represented by the data.
 * Photovoltaic system and battery parameters.
 * Grid feed-in tariff assumptions.
-* Battery efficiency and operating limits.
+* Investment cost assumptions for the payback calculation.
 
 ## Session Log
 
@@ -95,3 +96,4 @@ Important topics include:
 | 2026-10-16 | Created the GitHub repository and organized the project documentation.                                 |
 | 2026-10-16 | Cloned the repository in PyCharm and created the initial source directories.                           |
 | 2026-10-16 | Configured Python 3.13.5, created a virtual environment, installed dependencies, and verified imports. |
+| 2026-10-16 | Planned the two-track approach (baseline and scenario analysis first, DRL agent afterwards) and updated the specification. |
